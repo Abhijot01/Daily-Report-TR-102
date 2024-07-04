@@ -5,19 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training TR-102 Daily Report</title>
+    
     <style>
         /* Global Styles */
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('web3.webp');
+    background-image: url('bg.jpeg');
     /* Make sure the path is correct */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: rgb(0, 0, 0);
     color: #333;
+    overflow-y: scroll; /* add this */
+  background-attachment: fixed;
 }
 
 .container {
@@ -28,6 +37,8 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    position: relative; /* add this */
+    z-index: 1;
 }
 
 /* Header Styles */
@@ -49,7 +60,7 @@ header img {
 }
 
 header .home-button {
-    background-color: #DA83EB;
+    background-color: #9e4de5;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -60,7 +71,10 @@ header .home-button {
 }
 
 header .home-button:hover {
-    background-color: #54025F;
+    background-color: #6c009a;
+}
+header .home-button:active {
+    background-color: #a339d1;
 }
 
 /* Report Header Styles */
@@ -84,9 +98,10 @@ header .home-button:hover {
 }
 
 .report-header p {
-    color: #7f8c8d;
+    color: #6a6c6c;
     font-size: 18px;
     margin-bottom: 10px;
+    font-weight: 500;
 }
 
 /* Navigation Styles */
@@ -101,7 +116,7 @@ nav {
 nav a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #DA83EB;
+    background-color: #9e4de5;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -109,9 +124,12 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #54025F;
+    background-color: #6c009a;
+    transition: all;
 }
-
+nav a:hover:active {
+    background-color: #b638ec;
+}
 /* Section Styles */
 .section {
     display: none;
@@ -159,7 +177,7 @@ footer {
 }
 
 footer a {
-    color: #DA83EB;
+    color: #ae5cf5;
     text-decoration: none;
 }
 
@@ -188,17 +206,16 @@ footer a:hover {
     }
 }
     </style>
-</head>
 
+</head>
 <body>
     <div class="container">
-        <header>
-            <a href="https://www.gndec.ac.in/"><img src="gndeclogo.jpg" alt="GNDEC Logo"></a>
-            <a href="#" class="home-button" onclick="showSection('home')">Home</a>
+        <header> <a href="https://www.gndec.ac.in/"><img src="logo.jpeg" alt="GNDEC Logo"></a> 
+            <a href="index.html" class="home-button">Home</a> 
         </header>
         <div class="report-header">
             <h1>Training TR-102 Daily Report</h1>
-            <p>Submitted by:<br>Shafneet Kaur<br>URN 2203560 D2 CSE C1<br>Guru Nanak Dev Engineering College, Gill Park,Ludhiana</p>
+            <p>Submitted by:<br>Abhijot Singh<br>URN 2203391 D2 CSE A1<br>Guru Nanak Dev Engineering College, Gill Park,Ludhiana</p>
             <h2>4 Weeks Summer Training<br>on<br>Mastering the Semantic Web</h2>
         </div>
         <nav>
@@ -216,6 +233,7 @@ footer a:hover {
             <a href="#" onclick="showSection('day12')">Day 12</a>
             <a href="#" onclick="showSection('day13')">Day 13</a>
             <a href="#" onclick="showSection('day14')">Day 14</a>
+            <a href="#" onclick="showSection('day15')">Day 15</a>
         </nav>
         <section id="home" class="section active">
             <!-- No need to repeat the report header here -->
@@ -305,9 +323,15 @@ footer a:hover {
                 <iframe src="Day14.pdf"></iframe>
             </div>
         </section>
+        <section id="day15" class="section">
+            <h1>Training Report Day 15</h1>
+            <div class="pdf-container">
+                <iframe src="Day15.pdf"></iframe>
+            </div>
+        </section>
         <footer>
-            <a href="https://www.linkedin.com/in/shafneet-kaur-90434125b/"> &copy; Shafneet Kaur</a>
-        </footer>
+            <a href="https://www.linkedin.com/in/abhijot-singh-680888287/"> &copy; Abhijot Singh  </a>
+         </footer>
     </div>
     <script>
         function showSection(id) {
